@@ -241,7 +241,9 @@ The zoos want to display both the scientific name and the animal name in front o
 const getDisplay = arr => {
   const displayNames = [];
   arr.forEach(obj =>
-    displayNames.push(`Name: ${obj.animal_name}, ${obj.scientific_name}.`)
+    displayNames.push(
+      `Name: ${obj.animal_name}, Scientific:${obj.scientific_name}.`
+    )
   );
   return displayNames;
 };
