@@ -128,14 +128,12 @@ const graduates = [
 
 Once you have the new array created, sort the universities alphabetically and log the result. */
 
-function getUniversities(graduates) {
+const getUniversities = graduates => {
   const universities = [];
-  graduates.forEach(function(graduate) {
-    universities.push(graduate.university);
-  });
+  graduates.forEach(graduate => universities.push(graduate.university));
   universities.sort();
   return universities;
-}
+};
 
 console.log(getUniversities(graduates));
 
@@ -146,27 +144,25 @@ The resulting contact information strings should have a space between the first 
 
 Log the result of your new array. */
 
-function getContactInfo(arr) {
+const getContactInfo = arr => {
   const contactInfo = [];
-  arr.forEach(function(obj) {
-    contactInfo.push(`${obj.first_name} ${obj.email}`);
-  });
+  arr.forEach(obj => contactInfo.push(`${obj.first_name} ${obj.email}`));
   return contactInfo;
-}
+};
 
 console.log(getContactInfo(graduates));
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called unisWithUni that contains them all. This will be an array of objects. Log the result. */
 
-function hasUni(arr) {
+const hasUni = arr => {
   const unisWithUni = [];
-  arr.forEach(function(obj) {
+  arr.forEach(obj => {
     if (obj.university.includes("Uni")) {
       unisWithUni.push(obj.university);
     }
   });
   return unisWithUni;
-}
+};
 
 console.log(hasUni(graduates));
 
@@ -242,13 +238,13 @@ const zooAnimals = [
 The zoos want to display both the scientific name and the animal name in front of the habitats. Populate the displayNames array with only the animal_name and scientific_name of each animal. displayNames will be an array of strings, and each string should follow this pattern: "Name: Jackal, asiatic, Scientific: Canis aureus."
 
 */
-function getDisplay(arr) {
+const getDisplay = arr => {
   const displayNames = [];
-  arr.forEach(function(obj) {
-    displayNames.push(`Name: ${obj.animal_name}, ${obj.scientific_name}.`);
-  });
+  arr.forEach(obj =>
+    displayNames.push(`Name: ${obj.animal_name}, ${obj.scientific_name}.`)
+  );
   return displayNames;
-}
+};
 
 console.log(getDisplay(zooAnimals));
 
@@ -258,11 +254,11 @@ The zoos need a list of all their animal's names (animal_name only) converted to
 
 */
 
-function lowCaseAnimalNames(arr) {
-  return arr.map(function(obj) {
+const lowCaseAnimalNames = arr => {
+  return arr.map(obj => {
     return obj.animal_name.toLowerCase();
   });
-}
+};
 
 console.log(lowCaseAnimalNames(zooAnimals));
 
